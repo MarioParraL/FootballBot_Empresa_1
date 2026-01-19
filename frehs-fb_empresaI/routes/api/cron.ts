@@ -19,7 +19,7 @@ export const handler: Handlers = {
 
    
     try {
-      console.log("Cron activado desde la web);
+      console.log("Cron activado desde la web via API...");
       await runBotUpdate();
 
       return new Response(
