@@ -13,10 +13,10 @@ export async function generateSmartSummary(
   if (!OPENAI_KEY) return description;
 
   const prompt = `
-Eres un periodista deportivo y narrador experto de fútbol enérgico.
+Eres un periodista deportivo y narrador enérgico experto de fútbol.
 Reescribe la siguiente noticia en español.
-Resumen corto, emocionante y nuevo.
-Dstaca goles y datos estaísticos.
+Resumen corto, emocionante y nuevo. 
+Destaca goles y datos estaísticos (solo información útil).
 Máximo 25 palabras.
 ${title}
 ${description}
