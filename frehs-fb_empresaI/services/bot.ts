@@ -1,5 +1,5 @@
 import { getLaLigaNews } from "./news.ts";
-import { generateSmartSummary } from "./openai.ts";
+import { generateSummary } from "./openai.ts";
 import ArticulosCollection from "../db/client.ts";
 import { ArticleDB } from "../types.ts";
 
@@ -19,7 +19,7 @@ export async function runBotUpdate() {
 
     console.log(`Resumiendo noticia: ${news.title.substring(0, 50)}...`);
 
-    const summary = await generateSmartSummary(
+    const summary = await generateSummary(
       news.title,
       news.description,
     );
