@@ -7,7 +7,6 @@ const Header: FunctionalComponent = () => {
         <img src="/LogoFB.png" alt="logo" class="logo" />
       </a>
       <a href={"/news"}>Noticias</a>
-      <a href={"/resultados"}>Resultados</a>
       <a href={"/about"}>Sobre nosotros</a>
     </div>
   );
