@@ -6,7 +6,7 @@ function sleep(ms: number) {
   return new Promise((res) => setTimeout(res, ms));
 }
 
-export async function generateSmartSummary(
+export async function generateSummary(
   title: string,
   description: string,
 ): Promise<string> {
@@ -48,8 +48,8 @@ ${description}
       );
 
       if (response.status === 429) {
-        console.warn(
-          `Rate limit OpenAI (intento ${intento}).`,
+        console.error(
+          `Error por límites en OpenAI (intento ${intento}).`,
         );
         await sleep(4000);
         continue;
@@ -64,10 +64,10 @@ ${description}
       const text = data.choices?.[0]?.message?.content?.trim();
       if (text) return text;
     } catch (e) {
-      console.error("Error conexión OpenAI");
+      console.error("Error de conexión con OpenAI");
     }
   }
 
-  console.warn("OpenAI no respondió: Usando descripción original.");
+  console.warn("OpenAI no responde: Usando descripción original.");
   return description;
 }
