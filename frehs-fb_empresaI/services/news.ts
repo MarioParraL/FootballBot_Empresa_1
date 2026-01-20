@@ -20,7 +20,7 @@ export async function getLaLigaNews(): Promise<Article[]> {
     .split("T")[0];
 
   const query = encodeURIComponent(
-    '(LaLiga OR Madrid OR Barcelona OR Atleti) AND (crónica OR resumen OR goles OR "vs") -mercado -fichaje -alineación',
+    '(LaLiga OR Madrid OR Barcelona OR Atleti) AND (crónica OR resumen OR goles OR "vs")',
   );
 
   const url =
@@ -39,13 +39,13 @@ export async function getLaLigaNews(): Promise<Article[]> {
       art.description.length > 20
     );
 
-    noticias.sort((a: any, b: any) => {
+    /*noticias.sort((a: any, b: any) => {
       const aOk = /\d+-\d+/.test(a.title) || a.title.includes("Crónica");
       const bOk = /\d+-\d+/.test(b.title) || b.title.includes("Crónica");
       if (aOk && !bOk) return -1;
       if (!aOk && bOk) return 1;
       return 0;
-    });
+    });*/
 
     return noticias.slice(0, 10);
   } catch (e) {
