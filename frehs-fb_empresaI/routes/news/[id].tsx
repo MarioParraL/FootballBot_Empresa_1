@@ -51,7 +51,7 @@ export default function SingleNewsPage(props: PageProps<Article>) {
         </h1>
 
         <div class="ai-summary-box" style={{ marginTop: "2rem" }}>
-          <span class="ai-label">🤖 Análisis Detallado de IA</span>
+          <span class="ai-label">Análisis Detallado de IA</span>
           <p class="ai-text" style={{ fontSize: "1.1rem" }}>
             "{article.summary}"
           </p>
@@ -67,7 +67,7 @@ export default function SingleNewsPage(props: PageProps<Article>) {
           </a>
 
           <a href={article.url} target="_blank" class="read-more-btn">
-            Leer fuente original 🔗
+            Leer fuente original 
           </a>
         </div>
       </div>
