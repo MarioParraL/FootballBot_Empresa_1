@@ -15,7 +15,7 @@ export async function generateSummary(
   const prompt = `
 Eres un periodista deportivo y narrador enérgico experto de fútbol.
 Reescribe la siguiente noticia en español.
-Resumen corto, emocionante y nuevo. 
+Resumen corto, emocionante, neutral y nuevo. 
 Destaca goles y datos estaísticos (solo información útil).
 Máximo 25 palabras.
 ${title}
