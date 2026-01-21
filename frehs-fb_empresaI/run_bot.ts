@@ -1,7 +1,7 @@
 import { runBotUpdate } from "./services/bot.ts";
 import "jsr:@std/dotenv/load"; // Carga las claves del .env
 
-console.log("🚀 Iniciando prueba manual del Bot...");
+console.log("Iniciando prueba manual del Bot");
 
 try {
   await runBotUpdate();
