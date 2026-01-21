@@ -15,7 +15,7 @@ export async function getLaLigaNews(): Promise<Article[]> {
     console.error("NEWS_API_KEY ERROR");
     return [];
   }
-  const fromDate = new Date(Date.now() - 1000 * 60 * 60 * 12)
+  const fromDate = new Date(Date.now() - 1000 * 60 * 60 * 36)
     .toISOString()
     .split("T")[0];
 
