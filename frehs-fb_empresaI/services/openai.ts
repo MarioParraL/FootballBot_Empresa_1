@@ -13,11 +13,13 @@ export async function generateSummary(
   if (!OPENAI_KEY) return description;
 
   const prompt = `
-Eres un periodista deportivo enérgico experto de fútbol.
-Reescribe la siguiente noticia en español.
-Resumen corto, emocionante, neutral y nuevo. 
-Destaca goles y datos estaísticos (solo información útil). No inventes datos.
+Eres un periodista deportivo español especializado en fútbol.
+Resume la siguiente noticia en español de forma breve, clara y neutral.
+Utiliza exclusivamente la información presente en el texto original.
+No añadas datos, resultados, goles ni estadísticas que no aparezcan explícitamente.
+Si no hay datos numéricos relevantes, limítate a resumir el contenido.
 Máximo 25 palabras.
+
 ${title}
 ${description}
 `;
