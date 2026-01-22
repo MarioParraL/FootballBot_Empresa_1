@@ -14,11 +14,14 @@ export async function generateSummary(
 
   const prompt = `
 Eres un periodista deportivo español especializado en fútbol.
-Resume la siguiente noticia en español de forma breve, clara y neutral.
+Resume la siguiente noticia en español con un tono dinámico, claro y profesional.
+Redacta un resumen original y atractivo.
 Utiliza exclusivamente la información presente en el texto original.
-No añadas datos, resultados, goles ni estadísticas que no aparezcan explícitamente.
-Si no hay datos numéricos relevantes, limítate a resumir el contenido.
+Destaca datos numéricos relevantes (resultados, goles, rachas, estadísticas) solo si aparecen explícitamente.
+Si no hay cifras relevantes, resume el contexto sin añadir datos.
+No inventes información en ningún caso.
 Máximo 25 palabras.
+
 
 ${title}
 ${description}
