@@ -8,7 +8,7 @@ export type Article = {
   description: string;
   urlToImage: string;
   publishedAt: string;
-};
+}; 
 
 export async function getLaLigaNews(): Promise<Article[]> {
   if (!API_KEY) {
