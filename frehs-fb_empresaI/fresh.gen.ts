@@ -2,31 +2,45 @@
 // This file SHOULD be checked into source version control.
 // This file is automatically updated during development when running `dev.ts`.
 
+import * as $_platform_middleware from "./routes/(platform)/_middleware.ts";
+import * as $_platform_favorites from "./routes/(platform)/favorites.tsx";
+import * as $_platform_news from "./routes/(platform)/news.tsx";
+import * as $_platform_news_id_ from "./routes/(platform)/news/[id].tsx";
+import * as $_platform_resultados from "./routes/(platform)/resultados.tsx";
 import * as $_404 from "./routes/_404.tsx";
 import * as $_app from "./routes/_app.tsx";
 import * as $_layout from "./routes/_layout.tsx";
 import * as $about from "./routes/about.tsx";
+import * as $api_audio from "./routes/api/audio.ts";
 import * as $api_cron from "./routes/api/cron.ts";
 import * as $index from "./routes/index.tsx";
-import * as $news from "./routes/news.tsx";
-import * as $news_id_ from "./routes/news/[id].tsx";
-import * as $resultados from "./routes/resultados.tsx";
-
+import * as $logout from "./routes/logout.tsx";
+import * as $AudioPlayer from "./islands/AudioPlayer.tsx";
+import * as $LoginForm from "./islands/LoginForm.tsx";
+import * as $TodasAudioPlayer from "./islands/TodasAudioPlayer.tsx";
 import type { Manifest } from "$fresh/server.ts";
 
 const manifest = {
   routes: {
+    "./routes/(platform)/_middleware.ts": $_platform_middleware,
+    "./routes/(platform)/favorites.tsx": $_platform_favorites,
+    "./routes/(platform)/news.tsx": $_platform_news,
+    "./routes/(platform)/news/[id].tsx": $_platform_news_id_,
+    "./routes/(platform)/resultados.tsx": $_platform_resultados,
     "./routes/_404.tsx": $_404,
     "./routes/_app.tsx": $_app,
     "./routes/_layout.tsx": $_layout,
     "./routes/about.tsx": $about,
+    "./routes/api/audio.ts": $api_audio,
     "./routes/api/cron.ts": $api_cron,
     "./routes/index.tsx": $index,
-    "./routes/news.tsx": $news,
-    "./routes/news/[id].tsx": $news_id_,
-    "./routes/resultados.tsx": $resultados,
+    "./routes/logout.tsx": $logout,
   },
-  islands: {},
+  islands: {
+    "./islands/AudioPlayer.tsx": $AudioPlayer,
+    "./islands/LoginForm.tsx": $LoginForm,
+    "./islands/TodasAudioPlayer.tsx": $TodasAudioPlayer,
+  },
   baseUrl: import.meta.url,
 } satisfies Manifest;
 
