@@ -1,5 +1,5 @@
 import { Handlers, PageProps } from "$fresh/server.ts";
-import { ObjectId } from "npm:mongodb";
+import { ObjectId } from "mongodb";
 import ArticulosCollection from "../../../db/client.ts";
 import { Article } from "../../../types.ts";
 import AudioPlayer from "../../../islands/AudioPlayer.tsx";
