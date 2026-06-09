@@ -11,7 +11,7 @@ export const handler: Handlers = {
 
     const mp3 = await client.audio.speech.create({
       model: "gpt-4o-mini-tts",
-      voice: "alloy",
+      voice: "echo", // puedo ir cambiando el tono de voz , consultando los disntitos disponibles
       input: text,
     });
 
