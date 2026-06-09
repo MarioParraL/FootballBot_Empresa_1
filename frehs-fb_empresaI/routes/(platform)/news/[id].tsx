@@ -8,24 +8,21 @@ export const handler: Handlers<Article | null> = {
   async GET(_req, ctx) {
     const id = ctx.params.id;
 
-    // ✅ 1. Validación de ID (evita que rompa ObjectId)
+
     if (!ObjectId.isValid(id)) {
       console.warn("ID inválido:", id);
       return ctx.renderNotFound();
     }
 
     try {
-      // ✅ 2. Buscar en Mongo correctamente
       const articleDB = await ArticulosCollection.findOne({
         _id: new ObjectId(id),
       });
 
-      // ✅ 3. Control de no encontrado
       if (!articleDB) {
         return ctx.renderNotFound();
       }
 
-      // ✅ 4. Mapear correctamente
       const article: Article = {
         id: articleDB._id.toString(),
         title: articleDB.title,
@@ -46,7 +43,6 @@ export const handler: Handlers<Article | null> = {
 export default function SingleNewsPage(props: PageProps<Article | null>) {
   const article = props.data;
 
-  // ✅ 5. Seguridad extra (por si acaso)
   if (!article) {
     return <div>No se ha podido cargar la noticia.</div>;
   }
