@@ -16,7 +16,7 @@ export const handler: Handlers<Article | null> = {
 
     try {
       const articleDB = await ArticulosCollection.findOne({
-        _id: new ObjectId(id),
+        id: id,
       });
 
       if (!articleDB) {
