@@ -15,7 +15,7 @@ export const handler: Handlers<Data> = {
       .toArray();
 
     const articles: Article[] = articlesDB.map((article) => ({
-      id: article._id.toString(),
+      id: article.id,
       title: article.title,
       url: article.url,
       summary: article.summary,
